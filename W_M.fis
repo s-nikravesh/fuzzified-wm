@@ -1,0 +1,75 @@
+[System]
+Name='W_M'
+Type='mamdani'
+Version=2.0
+NumInputs=3
+NumOutputs=1
+NumRules=27
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='TOD'
+Range=[0 100]
+NumMFs=3
+MF1='Not_Greasy':'trimf',[0 0 50]
+MF2='Medium':'trimf',[10 50 90]
+MF3='Greasy':'trimf',[50 100 100]
+
+[Input2]
+Name='DOC'
+Range=[0 100]
+NumMFs=3
+MF1='Small':'trimf',[0 0 50]
+MF2='Medimu':'trimf',[10 50 90]
+MF3='Large':'trimf',[50 100 100]
+
+[Input3]
+Name='MOC'
+Range=[0 100]
+NumMFs=3
+MF1='Light':'trimf',[0 0 50]
+MF2='Medium':'trimf',[10 50 90]
+MF3='Heavy':'trimf',[50 100 100]
+
+[Output1]
+Name='PSpin'
+Range=[0 60]
+NumMFs=5
+MF1='Very_Short':'trimf',[-14 6 23]
+MF2='Short':'trimf',[0 14 41]
+MF3='Medium':'trimf',[11 30 45]
+MF4='Long':'trimf',[23 45 60]
+MF5='Very_Long':'trimf',[39 58 75]
+
+[Rules]
+1 1 1, 1 (1) : 1
+1 1 2, 2 (1) : 1
+1 1 3, 3 (1) : 1
+1 2 1, 3 (1) : 1
+1 2 2, 3 (1) : 1
+1 2 3, 4 (1) : 1
+1 3 1, 3 (1) : 1
+1 3 2, 3 (1) : 1
+1 3 3, 4 (1) : 1
+2 1 1, 2 (1) : 1
+2 1 2, 3 (1) : 1
+2 1 3, 4 (1) : 1
+2 2 1, 3 (1) : 1
+2 2 2, 4 (1) : 1
+2 2 3, 4 (1) : 1
+2 3 1, 2 (1) : 1
+2 3 2, 4 (1) : 1
+2 3 3, 4 (1) : 1
+3 1 1, 2 (1) : 1
+3 1 2, 3 (1) : 1
+3 1 3, 4 (1) : 1
+3 2 1, 3 (1) : 1
+3 2 2, 4 (1) : 1
+3 2 3, 5 (1) : 1
+3 3 1, 3 (1) : 1
+3 3 2, 4 (1) : 1
+3 3 3, 5 (1) : 1
